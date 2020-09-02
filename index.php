@@ -29,5 +29,26 @@
 
 		?>
 
+
+		<p id="p">a simple text , using for javascript things</p>
+
+		<button onclick="change()">change</button>
+
+		<button onclick="revert()">revert</button>
+
+
 	</body>
+
+	<script>
+		function change(){
+			document.getElementById("p").innerHTML="js is working !"
+		}
+	</script>
+
+	<script>
+		function revert(){
+			document.getElementById("p").innerHTML="a simple text , using for javascript things"
+		}
+	</script>
+
 </html>
