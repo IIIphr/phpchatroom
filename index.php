@@ -10,14 +10,16 @@
 
 		<?php
 
-		$mysql = new mysqli("localhost", "root", "", "php_chatroom");
+		$mysql = new mysqli("localhost", "root","", "php_chatroom");
 		if($mysql === false){
-			die("ERROR: Could not connect. " . $mysql->connect_error);
+			die("<p>ERROR: Could not connect. " . $mysql->connect_error . "</p>");
 		}
-		 
-		// Print host information
-		echo "Connect Successfully. Host info: " . $mysql->host_info;
+		else{
+			// Print host information
+			echo "<p>Connect Successfully. Host info: " . $mysql->host_info . "</p>";
+		}
 
 		?>
+		
 	</body>
 </html>
