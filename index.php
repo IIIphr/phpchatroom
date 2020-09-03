@@ -53,22 +53,11 @@
 
 	<script>
 		function submit(){
-			var message=document.getElementById("messages").innerHTML;
-			"<?php 
-			$req="INSERT INTO messages ('message') VALUES ("+message+")";
-
-			$mysql->request($req);
-			?>"
 		}
 	</script>
 
 	<script>
 		function refresh(){
-			document.getElementById("messages").innerHTML="<?php 
-			$req="SELECT * FROM messages";
-
-			echo $mysql->request($req);
-			?>"
 		}
 	</script>
 
