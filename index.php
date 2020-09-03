@@ -32,6 +32,8 @@
 		<p id="messages">messages goes here :<br></p>
 
 		<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
+		<br>
+		<p id="status"></p>
 
 		<button onclick="submit()">submit</button>
 		<button onclick="refresh()">refresh</button>
@@ -53,6 +55,17 @@
 
 	<script>
 		function submit(){
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("status").innerHTML = "submitted <br>"+
+					" the message was : "+ this.responseXML +
+					"<br> "+document.getElementById('message').innerHTML;
+				}
+			};
+			xhttp.open("GET", "store_message.php?message="+document.getElementById('message').innerHTML, true);
+			//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send();
 		}
 	</script>
 
