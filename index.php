@@ -60,10 +60,11 @@
 				if (this.readyState == 4 && this.status == 200) {
 					document.getElementById("status").innerHTML = "submitted <br>"+
 					" the message was : "+ this.responseXML +
-					"<br> "+document.getElementById('message').innerHTML;
+					"<br> "+document.getElementById('message').innerHTML +
+					"<br> "+"store_message.php?message="+document.getElementById('message').innerHTML;
 				}
 			};
-			xhttp.open("GET", "store_message.php?message="+document.getElementById('message').innerHTML, true);
+			xhttp.open("GET", "store_message.php?message= ' "+document.getElementById('message').innerHTML+" '", true);
 			//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send();
 		}
