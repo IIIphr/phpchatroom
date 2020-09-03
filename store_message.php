@@ -1,7 +1,7 @@
 <?php 
-$message=$_REQUEST['message'];
+$message=$_GET['message'];
 $mysql = new mysqli("localhost", "root","", "php_chatroom");
-$req="INSERT INTO messages ('message') VALUES (". $message .")";
+$req="INSERT INTO 'messages' (message) VALUES ('". $message ."')";
 $mysql->request($req);
-echo $_REQUEST . $_POST . $_GET . $message . $_REQUEST['message'];
+echo $_GET;
 ?>

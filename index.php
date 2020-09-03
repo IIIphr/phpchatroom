@@ -64,7 +64,7 @@
 					"<br> "+"store_message.php?message="+document.getElementById('message').innerHTML;
 				}
 			};
-			xhttp.open("GET", "store_message.php?message= ' "+document.getElementById('message').innerHTML+" '", true);
+			xhttp.open("GET", "store_message.php?message=temp", true);
 			//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send();
 		}
