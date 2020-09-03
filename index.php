@@ -1,14 +1,6 @@
 <html>
 	<head>
 		<title>My temp title :)</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function(){
-				$("p").click(function(){
-					$(this).hide();
-				});
-			});
-		</script>
 	</head>
 
 	<body>
@@ -37,6 +29,14 @@
 		<button onclick="revert()">revert</button>
 
 
+		<p id="messages">messages goes here :<br></p>
+
+		<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
+
+		<button onclick="submit()">submit</button>
+		<button onclick="refresh()">refresh</button>
+
+
 	</body>
 
 	<script>
@@ -50,5 +50,27 @@
 			document.getElementById("p").innerHTML="a simple text , using for javascript things"
 		}
 	</script>
+
+	<script>
+		function submit(){
+			var message=document.getElementById("messages").innerHTML;
+			"<?php 
+			$req="INSERT INTO messages ('message') VALUES ("+message+")";
+
+			$mysql->request($req);
+			?>"
+		}
+	</script>
+
+	<script>
+		function refresh(){
+			document.getElementById("messages").innerHTML="<?php 
+			$req="SELECT * FROM messages";
+
+			echo $mysql->request($req);
+			?>"
+		}
+	</script>
+
 
 </html>
