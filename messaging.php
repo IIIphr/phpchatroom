@@ -28,7 +28,8 @@
 			};
 			xhttp.open("POST", "store_message.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("message="+document.getElementById("message").value+"&sender="+"<?php echo $_POST['user']; ?>");
+			xhttp.send("message="+document.getElementById("message").value+"&sender="+"<?php echo $_POST['user']; ?>"+
+			"&time="+ new Date() );
 		}
 	</script>
 
