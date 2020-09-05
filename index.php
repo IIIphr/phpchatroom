@@ -4,18 +4,14 @@
 	</head>
 
 	<body>
-		<p>please enter your username : </p>
 
-		<textarea name="user" id="user" cols="30" rows="1" onkeyup="update()"></textarea>
+		<form action="messaging.php" method="POST" id="form">
+			user name :
+			<input type="text" id="rd" name="user">
+			<br>
+			<input type="submit" value="Submit">
+		</form>
 
-		<br>
-
-		<a id="rd" href="index.php">submit and go</a>
 	</body>
 
-	<script>
-		function update(){
-			document.getElementById("rd").href="messaging.php?user="+document.getElementById("user").value;
-		}
-	</script>
 </html>
