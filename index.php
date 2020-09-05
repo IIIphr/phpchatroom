@@ -58,15 +58,13 @@
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("status").innerHTML = "submitted <br>"+
-					" the message was : "+ this.responseXML +
-					"<br> "+document.getElementById('message').innerHTML +
-					"<br> "+"store_message.php?message="+document.getElementById('message').innerHTML;
+					var res="submitted <br>"+this.responseText;
+					document.getElementById("status").innerHTML = res;
 				}
 			};
-			xhttp.open("GET", "store_message.php?message=temp", true);
-			//xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send();
+			xhttp.open("POST", "store_message.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("message=temp");
 		}
 	</script>
 
