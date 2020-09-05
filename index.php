@@ -1,52 +1,21 @@
 <html>
 	<head>
-		<title>My temp title :)</title>
+		<title>Wlecome !</title>
 	</head>
 
 	<body>
+		<p>please enter your username : </p>
 
-		<p id="messages">messages goes here :<br></p>
+		<textarea name="user" id="user" cols="30" rows="1" onkeyup="update()"></textarea>
 
-		<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
 		<br>
-		<p id="status"></p>
 
-		<button onclick="submit()">submit</button>
-		<button onclick="refresh()">refresh</button>
-
-
+		<a id="rd" href="index.php">submit and go</a>
 	</body>
 
 	<script>
-		function submit(){
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					var res="submitted <br>"+this.responseText;
-					document.getElementById("status").innerHTML = res;
-				}
-			};
-			xhttp.open("POST", "store_message.php", true);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("message="+document.getElementById("message").value+"&sender=this_pc");
+		function update(){
+			document.getElementById("rd").href="messaging.php?user="+document.getElementById("user").value;
 		}
 	</script>
-
-	<script>
-		function refresh(){
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					var res="refreshed ! <br>";
-					document.getElementById("status").innerHTML = res;
-					document.getElementById("messages").innerHTML = this.responseText;
-				}
-			};
-			xhttp.open("POST", "get_messages.php", true);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send();
-		}
-	</script>
-
-
 </html>
