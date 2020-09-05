@@ -28,13 +28,23 @@
 			};
 			xhttp.open("POST", "store_message.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("message="+document.getElementById("message").innerHTML);
+			xhttp.send("message="+document.getElementById("message").value+"&sender=this_pc");
 		}
 	</script>
 
 	<script>
 		function refresh(){
-
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var res="refreshed ! <br>";
+					document.getElementById("status").innerHTML = res;
+					document.getElementById("messages").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("POST", "get_messages.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send();
 		}
 	</script>
 

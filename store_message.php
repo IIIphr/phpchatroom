@@ -1,11 +1,11 @@
 <?php 
 $message=$_POST['message'];
+$sender=$_POST['sender'];
 $mysql = new mysqli("localhost", "root","", "php_chatroom");
-// Check connection
 if ($mysql->connect_error) {
     die("Connection failed: " . $mysql->connect_error);
 }
-$req="INSERT INTO messages (message) VALUES ('". $message ."');";
+$req="INSERT INTO messages (message,sender) VALUES ('". $message ."','". $sender ."');";
 if ($mysql->query($req) === TRUE) {
     echo "New record created successfully";
 } else {
