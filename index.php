@@ -20,32 +20,41 @@
 
 	<script>
 		$(function(){
+			console.log("func");
 			$("#loginform").submit(function(){
+				console.log("form");
+				var formvals=$("#loginform").serializeArray();
+				console.log(formvals['username']);
+				console.log(formvals['password']);
 				$.post("logincheck.php",
 				{
 					username: document.getElementById("username").value,
 					password: document.getElementById("password").value
 				},
 				function(data,status){
+					console.log(data);
+					console.log(status);
 					if(data=="OK"){
-						form=document.createElement('form');
+						var form=document.createElement('form');
 						form.method="POST";
 						form.action="messaging.php";
-						userfield=document.createElement('input');
+						var userfield=document.createElement('input');
 						userfield.type = 'hidden';
 						userfield.name = 'username';
 						userfield.value = document.getElementById("username").value;
 						form.appendChild(userfield);
-						passfield=document.createElement('input');
+						var passfield=document.createElement('input');
 						passfield.type = 'hidden';
 						passfield.name = 'password';
 						passfield.value = document.getElementById("password").value;
 						form.appendChild(passfield);
 						document.body.appendChild(form);
-  						form.submit();
+						form.submit();
+						console.log("if");
 					}
 					else{
 						document.getElementById("error").innerHTML="Can't login";
+						console.log("else");
 					}
 				})
 			})
