@@ -9,74 +9,27 @@
 		<form method="POST" id="loginform">
 			username : <input type="text" name="username" id="username"><br>
 			password : <input type="password" name="password" id="password"><br>
-			<input type="submit" value="login"><br>
+			<input type="submit" value="login" id="submit"><br>
 		</form>
 
 		<p id="error"></p>
 
 		<a href="register.php">No account ? register here</a>
 
+		<button id="b">button</button>
+
 	</body>
 
-<!--	<script>
-		$(function(event){
-			console.log("func");
-			$("#loginform").submit(function( event ){
-				console.log("form");
-				var formvals=$(this).serialize();
+	<script>
+		$(function(){
+			$("#loginform").submit(function(){
 				$.post("logincheck.php",
-				{
-					formvals
-				},
-				function(data,status){
-					console.log(data);
-					console.log(status);
-					if(data=="OK"){
-						var form=document.createElement('form');
-						form.method="POST";
-						form.action="logincheck.php";
-						var userfield=document.createElement('input');
-						userfield.type = 'hidden';
-						userfield.name = 'username';
-						userfield.value = formvals['username'];
-						form.appendChild(userfield);
-						var passfield=document.createElement('input');
-						passfield.type = 'hidden';
-						passfield.name = 'password';
-						passfield.value = formvals['password'];
-						form.appendChild(passfield);
-						document.body.appendChild(form);
-						form.submit();
-						console.log("if");
-					}
-					else{
-						document.getElementById("error").innerHTML="Can't login";
-						console.log("else");
-					}
-				})
+				$("#loginform").serialize(),
+				function(data,status,jqXHR){
+					$("#error").text="success !"+data+status;
+				});
 			})
 		})
 	</script>
--->
-
-<!--		<script>
-			$(function(event){
-				$("#loginform").submit(function( event ){
-					var values = $(this).serialize();
-					$.ajax({
-						url: "loginchek.php",
-						type: "post",
-						data: values ,
-						success: function (response) {
-							document.getElementById("error").ineerHTML=response;
-						},
-						error: function(jqXHR, textStatus, errorThrown) {
-							console.log(textStatus, errorThrown);
-						}
-					});
-				})
-			})
-		</script>
--->
 
 </html>
