@@ -6,7 +6,7 @@
 
 	<body>
 
-		<form action="" method="POST" id="loginform">
+		<form method="POST" id="loginform">
 			username : <input type="text" name="username" id="username"><br>
 			password : <input type="password" name="password" id="password"><br>
 			<input type="submit" value="login"><br>
@@ -18,18 +18,15 @@
 
 	</body>
 
-	<script>
-		$(function(){
+<!--	<script>
+		$(function(event){
 			console.log("func");
-			$("#loginform").submit(function(){
+			$("#loginform").submit(function( event ){
 				console.log("form");
-				var formvals=$("#loginform").serializeArray();
-				console.log(formvals['username']);
-				console.log(formvals['password']);
+				var formvals=$(this).serialize();
 				$.post("logincheck.php",
 				{
-					username: document.getElementById("username").value,
-					password: document.getElementById("password").value
+					formvals
 				},
 				function(data,status){
 					console.log(data);
@@ -37,16 +34,16 @@
 					if(data=="OK"){
 						var form=document.createElement('form');
 						form.method="POST";
-						form.action="messaging.php";
+						form.action="logincheck.php";
 						var userfield=document.createElement('input');
 						userfield.type = 'hidden';
 						userfield.name = 'username';
-						userfield.value = document.getElementById("username").value;
+						userfield.value = formvals['username'];
 						form.appendChild(userfield);
 						var passfield=document.createElement('input');
 						passfield.type = 'hidden';
 						passfield.name = 'password';
-						passfield.value = document.getElementById("password").value;
+						passfield.value = formvals['password'];
 						form.appendChild(passfield);
 						document.body.appendChild(form);
 						form.submit();
@@ -60,5 +57,26 @@
 			})
 		})
 	</script>
+-->
+
+<!--		<script>
+			$(function(event){
+				$("#loginform").submit(function( event ){
+					var values = $(this).serialize();
+					$.ajax({
+						url: "loginchek.php",
+						type: "post",
+						data: values ,
+						success: function (response) {
+							document.getElementById("error").ineerHTML=response;
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							console.log(textStatus, errorThrown);
+						}
+					});
+				})
+			})
+		</script>
+-->
 
 </html>
