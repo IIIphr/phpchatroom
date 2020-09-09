@@ -11,4 +11,5 @@ if ($res->num_rows > 0) {
         }
     }
 }
+$mysql->close();
 ?>

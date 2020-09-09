@@ -7,4 +7,5 @@ if ($res->num_rows > 0) {
     echo $row['sender']." : ". $row['message'] . "   : " . $row['time'] ."<br>";
   }
 }
+$mysql->close();
 ?>

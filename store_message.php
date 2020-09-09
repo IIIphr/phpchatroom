@@ -12,4 +12,5 @@ if ($mysql->query($req) === TRUE) {
 } else {
     echo "Error: " . $req . "<br>" . $mysql->error;
 }
+$mysql->close();
 ?>
