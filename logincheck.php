@@ -7,7 +7,7 @@ $res=$mysql->query($qry);
 if ($res->num_rows > 0) {
     while($row = $res->fetch_assoc()) {
         if($row['password']==$password){
-            echo "OK";
+            echo $row['display_name'];
         }
     }
 }

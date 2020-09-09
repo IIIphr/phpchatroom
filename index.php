@@ -27,7 +27,21 @@
 				$.post("logincheck.php",
 				$("#loginform").serialize(),
 				function(data,status,jqXHR){
-					$("#error").text("success !");
+					if(data!=""){
+						const form = document.createElement('form');
+						form.method = "POST";
+						form.action = "messaging.php";
+						const hiddenField = document.createElement('input');
+						hiddenField.type = 'hidden';
+						hiddenField.name = 'sender';
+						hiddenField.value = data;
+						form.appendChild(hiddenField);
+						document.body.appendChild(form);
+  						form.submit();
+					}
+					else{
+						$("#error").text("username or password is incorrect !");
+					}
 				});
 			})
 		})
