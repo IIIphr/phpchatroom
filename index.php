@@ -22,11 +22,12 @@
 
 	<script>
 		$(function(){
-			$("#loginform").submit(function(){
+			$("#loginform").submit(function(e){
+				e.preventDefault();
 				$.post("logincheck.php",
 				$("#loginform").serialize(),
 				function(data,status,jqXHR){
-					$("#error").text="success !"+data+status;
+					$("#error").text("success !");
 				});
 			})
 		})
