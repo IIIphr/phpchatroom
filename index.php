@@ -16,8 +16,6 @@
 
 		<a href="register.php">No account ? register here</a>
 
-		<button id="b">button</button>
-
 	</body>
 
 	<script>
