@@ -41,8 +41,8 @@
 	<body>
 
 		<form method="POST" id="loginform">
-			username : <input type="text" name="username" id="username"><br>
-			password : <input type="password" name="password" id="password"><br>
+			username : <input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
+			password : <input type="password" name="password" id="password" required><br>
 			<input type="submit" value="login" id="submit"><br>
 		</form>
 
@@ -69,7 +69,7 @@
 						hiddenField.value = data;
 						form.appendChild(hiddenField);
 						document.body.appendChild(form);
-						setCookie("username",$("#username").value,20);
+						setCookie("username",$("#username").val(),20);
 						setCookie("sender",data,20);
   						form.submit();
 					}

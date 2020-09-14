@@ -2,15 +2,27 @@
     <head>
         <title>register here !</title>
 		<script src="jquery-3.5.1.js"></script>
+		<script>
+			function setCookie(cname, cvalue, exdays) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+				var expires = "expires="+d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+		</script>
     </head>
 
     <body>
         
         <form id="registerform" method="POST">
-            username : <input type="text" name="username" id="username"><br>
-            password : <input type="password" name="password" id="password" minlength="8"><br>
-            confirm password : <input type="password" name="password_repeat" id="password_repeat"><br>
-            display name : <input type="text" name="dname" id="dname"><br>
+			username : <input type="text" name="username" id="username"
+						required pattern="[A-Z|a-z| |_|0-9]" autofocus><br>
+			password : <input type="password" name="password" id="password" minlength="8"
+						required pattern="[a-z|A-Z|0-9]"><br>
+			confirm password : <input type="password" name="password_repeat" id="password_repeat"
+								minlength="8" required pattern="[a-z|A-Z|0-9]"><br>
+			display name : <input type="text" name="dname" id="dname"
+							required pattern="[A-Z|a-z| |_|0-9]"><br>
             <input type="submit" value="submit" id="submit"><br>
         </form>
 
@@ -31,11 +43,8 @@
 						const form = document.createElement('form');
 						form.method = "POST";
 						form.action = "messaging.php";
-						const hiddenField = document.createElement('input');
-						hiddenField.type = 'hidden';
-						hiddenField.name = 'sender';
-						hiddenField.value = data;
-						form.appendChild(hiddenField);
+						setCookie("username",$("#username").val(),20);
+						setCookie("sender",data,20);
 						document.body.appendChild(form);
   						form.submit();
 					}
