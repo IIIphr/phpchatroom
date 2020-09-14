@@ -1,6 +1,22 @@
 <html>
 	<head>
 		<title>My temp title :)</title>
+		<script>
+			function getCookie(cname) {
+				var name = cname + "=";
+				var ca = document.cookie.split(';');
+				for(var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+		</script>
 	</head>
 
 	<body>
@@ -28,7 +44,7 @@
 			};
 			xhttp.open("POST", "store_message.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("message="+document.getElementById("message").value+"&sender="+"<?php echo $_POST['sender']; ?>"+
+			xhttp.send("message="+document.getElementById("message").value+"&sender="+getCookie("sender")+
 			"&time="+ new Date() );
 		}
 	</script>
