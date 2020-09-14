@@ -2,6 +2,7 @@
     <head>
         <title>register here !</title>
 		<script src="jquery-3.5.1.js"></script>
+		<script src="node_modules/pristinejs/src/pristine.js"></script>
 		<script>
 			function setCookie(cname, cvalue, exdays) {
 				var d = new Date();
@@ -16,13 +17,13 @@
         
         <form id="registerform" method="POST">
 			username : <input type="text" name="username" id="username"
-						required pattern="[A-Z|a-z| |_|0-9]" autofocus><br>
+						required autofocus><br>
 			password : <input type="password" name="password" id="password" minlength="8"
-						required pattern="[a-z|A-Z|0-9]"><br>
+						required><br>
 			confirm password : <input type="password" name="password_repeat" id="password_repeat"
-								minlength="8" required pattern="[a-z|A-Z|0-9]"><br>
+								minlength="8" required data-pristine-equals="#password" class="form-control"><br>
 			display name : <input type="text" name="dname" id="dname"
-							required pattern="[A-Z|a-z| |_|0-9]"><br>
+							required><br>
             <input type="submit" value="submit" id="submit"><br>
         </form>
 
@@ -30,7 +31,17 @@
 
 		<a href="index.php">return to login</a>
 
-    </body>
+	</body>
+
+	<script>
+		$(function(){
+			var pristine = new Pristine(document.getElementById("registerform"));
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				var valid = pristine.validate();
+			});
+		})
+	</script>
 
     <script>
 		$(function(){
