@@ -11,6 +11,8 @@ if ($res->num_rows == 0) {
         $qry="INSERT INTO users (username,password,display_name) VALUES ('". $username ."','". $password ."','". $display ."')";
         if($mysql->query($qry)===TRUE){
             echo $display;
+            $_SESSION['username']=$username;
+            $_SESSION['sender']=$row['display_name'];
         }
     }
 }

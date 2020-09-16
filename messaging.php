@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 	<head>
 		<title>My temp title :)</title>
@@ -66,7 +67,7 @@
 			};
 			xhttp.open("POST", "store_message.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("message="+document.getElementById("message").value+"&sender="+getCookie("sender")+
+			xhttp.send("message="+document.getElementById("message").value+"&sender="+"<?php echo $_SESSION['sender'] ?>"+
 			"&time="+ new Date() );
 		}
 	</script>

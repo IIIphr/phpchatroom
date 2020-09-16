@@ -9,6 +9,8 @@ if ($res->num_rows > 0) {
         fwrite($file,password_verify($password,$row['password']));
         if(password_verify($password,$row['password'])){
             echo $row['display_name'];
+            $_SESSION['username']=$username;
+            $_SESSION['sender']=$row['display_name'];
         }
     }
 }

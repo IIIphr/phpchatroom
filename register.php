@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
         <title>register here !</title>
@@ -13,7 +14,7 @@
 		</script>
 		<script>
 			$(function(){
-				var username = getCookie("username");
+				var username = "<?php echo $_SESSION['username'] ?>";
 				if (username != "") {
 					const form = document.createElement('form');
 					form.method = "POST";
@@ -75,8 +76,6 @@
 						const form = document.createElement('form');
 						form.method = "POST";
 						form.action = "messaging.php";
-						setCookie("username",$("#username").val(),20);
-						setCookie("sender",data,20);
 						document.body.appendChild(form);
   						form.submit();
 					}
