@@ -11,6 +11,18 @@
 				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 			}
 		</script>
+		<script>
+			$(function(){
+				var username = getCookie("username");
+				if (username != "") {
+					const form = document.createElement('form');
+					form.method = "POST";
+					form.action = "messaging.php";
+					document.body.appendChild(form);
+					form.submit();
+				}
+			})
+		</script>
 		<link rel="stylesheet" href="style.css">
     </head>
 
@@ -22,13 +34,13 @@
 			<div class="maincontainer" id="mainpanel">
 				<form id="registerform" method="POST">
 					username : <input type="text" name="username" id="username"
-								required autofocus><br>
+								required autofocus maxlength="30"><br>
 					password : <input type="password" name="password" id="password" minlength="8"
 								required><br>
 					confirm password : <input type="password" name="password_repeat" id="password_repeat"
 										minlength="8" required data-pristine-equals="#password" class="form-control"><br>
 					display name : <input type="text" name="dname" id="dname"
-									required><br>
+									required maxlength="30"><br>
 					<input type="submit" value="submit" id="submit"><br>
 				</form>
 
@@ -65,7 +77,6 @@
 						form.action = "messaging.php";
 						setCookie("username",$("#username").val(),20);
 						setCookie("sender",data,20);
-						setCookie("password",$("#password").val(),20);
 						document.body.appendChild(form);
   						form.submit();
 					}

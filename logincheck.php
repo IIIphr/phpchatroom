@@ -6,7 +6,8 @@ $qry="SELECT * FROM users WHERE username='". $username ."';";
 $res=$mysql->query($qry);
 if ($res->num_rows > 0) {
     while($row = $res->fetch_assoc()) {
-        if($row['password']==$password){
+        fwrite($file,password_verify($password,$row['password']));
+        if(password_verify($password,$row['password'])){
             echo $row['display_name'];
         }
     }
