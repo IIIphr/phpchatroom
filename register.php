@@ -3,7 +3,6 @@
     <head>
         <title>register here !</title>
 		<script src="jquery-3.5.1.js"></script>
-		<script src="node_modules/pristinejs/src/pristine.js"></script>
 		<script>
 			function setCookie(cname, cvalue, exdays) {
 				var d = new Date();
