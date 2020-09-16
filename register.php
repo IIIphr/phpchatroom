@@ -11,25 +11,34 @@
 				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 			}
 		</script>
+		<link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        
-        <form id="registerform" method="POST">
-			username : <input type="text" name="username" id="username"
-						required autofocus><br>
-			password : <input type="password" name="password" id="password" minlength="8"
-						required><br>
-			confirm password : <input type="password" name="password_repeat" id="password_repeat"
-								minlength="8" required data-pristine-equals="#password" class="form-control"><br>
-			display name : <input type="text" name="dname" id="dname"
-							required><br>
-            <input type="submit" value="submit" id="submit"><br>
-        </form>
 
-		<p id="error"></p>
+		<div class="container">
+			<div class="leftcontainer" id="leftpanel">left panel</div>
 
-		<a href="index.php">return to login</a>
+			<div class="maincontainer" id="mainpanel">
+				<form id="registerform" method="POST">
+					username : <input type="text" name="username" id="username"
+								required autofocus><br>
+					password : <input type="password" name="password" id="password" minlength="8"
+								required><br>
+					confirm password : <input type="password" name="password_repeat" id="password_repeat"
+										minlength="8" required data-pristine-equals="#password" class="form-control"><br>
+					display name : <input type="text" name="dname" id="dname"
+									required><br>
+					<input type="submit" value="submit" id="submit"><br>
+				</form>
+
+				<p id="error"></p>
+
+				<a href="index.php">return to login</a>
+			</div>
+
+			<div class="rightcontainer" id="rightpanel">right panel</div>
+		</div>
 
 	</body>
 

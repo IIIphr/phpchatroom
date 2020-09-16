@@ -44,12 +44,6 @@
 				}
 			})
 		</script>
-
-		<style>
-			.maincontainer{
-				text-align: center;
-			}
-		</style>
 		<link rel="stylesheet" href="style.css">
 	</head>
 

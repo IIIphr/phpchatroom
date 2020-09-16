@@ -17,20 +17,28 @@
 				return "";
 			}
 		</script>
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
 
-		<p id="messages">messages goes here :<br></p>
+		<div class="container">
+			<div class="leftcontainer" id="leftpanel">left panel</div>
 
-		<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
-		<br>
-		<p id="status"></p>
+			<div class="maincontainer" id="mainpanel">
+				<p id="messages">messages goes here :<br></p>
 
-		<button onclick="submit()">submit</button>
-		<button onclick="refresh()">refresh</button>
-		<button onclick="logout()">logout</button>
+				<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
+				<br>
+				<p id="status"></p>
 
+				<button onclick="submit()">submit</button>
+				<button onclick="refresh()">refresh</button>
+				<button onclick="logout()">logout</button>
+			</div>
+
+			<div class="rightcontainer" id="rightpanel">right panel</div>
+		</div>
 
 	</body>
 
