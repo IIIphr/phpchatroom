@@ -1,4 +1,5 @@
 <?php
+session_start();
 $username=$_POST['username'];
 $password=password_hash($_POST['password'],PASSWORD_DEFAULT,['cost' => 12]);
 $confirm=$_POST['password_repeat'];

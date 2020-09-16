@@ -45,12 +45,9 @@
 
 	<script>
 		function logout(){
-			document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-			document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-			document.cookie = "sender=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 			const form = document.createElement('form');
 			form.method = "POST";
-			form.action = "index.php";
+			form.action = "logout.php";
 			document.body.appendChild(form);
 			form.submit();
 		}

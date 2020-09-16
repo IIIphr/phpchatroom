@@ -1,4 +1,5 @@
 <?php
+session_start();
 $username=$_POST['username'];
 $password=$_POST['password'];
 $mysql=new mysqli("localhost","root","","php_chatroom");
