@@ -46,17 +46,11 @@
 		</script>
 
 		<style>
-			.container{
-				display: grid;
-				height: 100%;
-				width: 100%;
-				grid-template-columns: 20% 60% 20%;
-				grid-template-rows: 100%;
-			}
 			.maincontainer{
 				text-align: center;
 			}
 		</style>
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
