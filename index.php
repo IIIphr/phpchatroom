@@ -37,6 +37,7 @@
 				}
 			})
 		</script>
+		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
 
@@ -64,26 +65,23 @@
 
 	<script>
 		$(function(){
-			var loginform=document.getElementById("loginform");
-			var pristine=new Pristine(loginform);
 			$("#loginform").submit(function(e){
 				e.preventDefault();
-				if(pristine.validate()){
-					$.post("logincheck.php",
-					$("#loginform").serialize(),
-					function(data,status,jqXHR){
-						if(data!=""){
-							const form = document.createElement('form');
-							form.method = "POST";
-							form.action = "messaging.php";
-							document.body.appendChild(form);
-							form.submit();
-						}
-						else{
-							$("#error").text("username or password is incorrect !");
-						}
-					});
-				}
+				$("#error").text(validator.isAlphanumeric($("#username").val()+""));
+				/*$.post("logincheck.php",
+				$("#loginform").serialize(),
+				function(data,status,jqXHR){
+					if(data!=""){
+						const form = document.createElement('form');
+						form.method = "POST";
+						form.action = "messaging.php";
+						document.body.appendChild(form);
+						form.submit();
+					}
+					else{
+						$("#error").text("username or password is incorrect !");
+					}
+				});*/
 			})
 		})
 	</script>
