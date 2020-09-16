@@ -44,19 +44,40 @@
 				}
 			})
 		</script>
+
+		<style>
+			.container{
+				display: grid;
+				height: 100%;
+				width: 100%;
+				grid-template-columns: 20% 60% 20%;
+				grid-template-rows: 100%;
+			}
+			.maincontainer{
+				text-align: center;
+			}
+		</style>
 	</head>
 
 	<body>
 
-		<form method="POST" id="loginform">
-			username : <input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
-			password : <input type="password" name="password" id="password" required><br>
-			<input type="submit" value="login" id="submit"><br>
-		</form>
+		<div class="container">
+			<div class="leftcontainer" id="leftpanel">left panel</div>
 
-		<p id="error"></p>
+			<div class="maincontainer" id="mainpanel">
+				<form method="POST" id="loginform">
+					username : <input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
+					password : <input type="password" name="password" id="password" required><br>
+					<input type="submit" value="login" id="submit"><br>
+				</form>
 
-		<a href="register.php">No account ? register here</a>
+				<p id="error"></p>
+
+				<a href="register.php">No account ? register here</a>
+			</div>
+
+			<div class="rightcontainer" id="rightpanel">right panel</div>
+		</div>
 
 	</body>
 
