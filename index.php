@@ -28,12 +28,19 @@
 		<script>
 			$(function(){
 				var username = getCookie("username");
+				var password = getCookie("password");
 				if (username != "") {
-					const form = document.createElement('form');
-					form.method = "POST";
-					form.action = "messaging.php";
-					document.body.appendChild(form);
-					form.submit();
+					$.post("logincheck.php",
+					{ username: username , password: password},
+					function(data,status,jqXHR){
+						if(data!=""){
+							const form = document.createElement('form');
+							form.method = "POST";
+							form.action = "messaging.php";
+							document.body.appendChild(form);
+							form.submit();
+						}
+					});
 				}
 			})
 		</script>
@@ -64,14 +71,10 @@
 						const form = document.createElement('form');
 						form.method = "POST";
 						form.action = "messaging.php";
-						const hiddenField = document.createElement('input');
-						hiddenField.type = 'hidden';
-						hiddenField.name = 'sender';
-						hiddenField.value = data;
-						form.appendChild(hiddenField);
 						document.body.appendChild(form);
 						setCookie("username",$("#username").val(),20);
 						setCookie("sender",data,20);
+						setCookie("password",$("#password").val(),20);
   						form.submit();
 					}
 					else{
