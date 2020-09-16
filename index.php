@@ -28,7 +28,7 @@
 		</script>
 		<script>
 			$(function(){
-				var username = "<?php echo $_SESSION['username'] ?>";
+				var username = "<?php if( isset($_SESSION['username']) ) { echo $_SESSION['username'] ;} ?>";
 				if (username != "") {
 					const form = document.createElement('form');
 					form.method = "POST";
