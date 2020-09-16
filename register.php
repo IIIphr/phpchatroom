@@ -56,6 +56,7 @@
 						form.action = "messaging.php";
 						setCookie("username",$("#username").val(),20);
 						setCookie("sender",data,20);
+						setCookie("password",$("#password").val(),20);
 						document.body.appendChild(form);
   						form.submit();
 					}
