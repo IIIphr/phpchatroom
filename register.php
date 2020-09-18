@@ -68,20 +68,24 @@
 		$(function(){
 			$("#registerform").submit(function(e){
 				e.preventDefault();
-				$.post("registercheck.php",
-				$("#registerform").serialize(),
-				function(data,status,jqXHR){
-					if(data!=""){
-						const form = document.createElement('form');
-						form.method = "POST";
-						form.action = "messaging.php";
-						document.body.appendChild(form);
-  						form.submit();
-					}
-					else{
-						$("#error").text("one the fields are not correct");
-					}
-				});
+				var inputs=""+$("#username").val()+$("#password").val()+$("#password_repeat").val()+$("#dname").val();
+				var password_check=validator.equals(""+$("#password").val(),""+$("#password_repeat").val());
+				if(validator.isAlphanumeric(inputs) && password_check){
+					$.post("registercheck.php",
+					$("#registerform").serialize(),
+					function(data,status,jqXHR){
+						if(data!=""){
+							const form = document.createElement('form');
+							form.method = "POST";
+							form.action = "messaging.php";
+							document.body.appendChild(form);
+							form.submit();
+						}
+						else{
+							$("#error").text("one the fields are not correct");
+						}
+					});
+				}
 			})
 		})
 	</script>

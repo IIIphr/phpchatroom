@@ -19,6 +19,7 @@
 			}
 		</script>
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
 	</head>
 
 	<body>

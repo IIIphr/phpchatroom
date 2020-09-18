@@ -67,21 +67,22 @@
 		$(function(){
 			$("#loginform").submit(function(e){
 				e.preventDefault();
-				$("#error").text(validator.isAlphanumeric($("#username").val()+""));
-				/*$.post("logincheck.php",
-				$("#loginform").serialize(),
-				function(data,status,jqXHR){
-					if(data!=""){
-						const form = document.createElement('form');
-						form.method = "POST";
-						form.action = "messaging.php";
-						document.body.appendChild(form);
-						form.submit();
-					}
-					else{
-						$("#error").text("username or password is incorrect !");
-					}
-				});*/
+				if(validator.isAlphanumeric($("#username").val()+"") && validator.isAlphanumeric($("#password").val()+"")){
+					$.post("logincheck.php",
+					$("#loginform").serialize(),
+					function(data,status,jqXHR){
+						if(data!=""){
+							const form = document.createElement('form');
+							form.method = "POST";
+							form.action = "messaging.php";
+							document.body.appendChild(form);
+							form.submit();
+						}
+						else{
+							$("#error").text("username or password is incorrect !");
+						}
+					});
+				}
 			})
 		})
 	</script>
