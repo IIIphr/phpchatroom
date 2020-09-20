@@ -13,7 +13,7 @@ if ($res->num_rows == 0) {
         if($mysql->query($qry)===TRUE){
             echo $display;
             $_SESSION['username']=$username;
-            $_SESSION['sender']=$row['display_name'];
+            $_SESSION['sender']=$display;
         }
     }
 }

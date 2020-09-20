@@ -23,6 +23,7 @@
 				}
 			})
 		</script>
+		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
 		<link rel="stylesheet" href="style.css">
     </head>
 
@@ -38,13 +39,13 @@
 					password : <input type="password" name="password" id="password" minlength="8"
 								required><br>
 					confirm password : <input type="password" name="password_repeat" id="password_repeat"
-										minlength="8" required data-pristine-equals="#password" class="form-control"><br>
+										minlength="8"><br>
 					display name : <input type="text" name="dname" id="dname"
 									required maxlength="30"><br>
 					<input type="submit" value="submit" id="submit"><br>
 				</form>
 
-				<p id="error"></p>
+				<div id="error"></div>
 
 				<a href="index.php">return to login</a>
 			</div>
@@ -53,16 +54,6 @@
 		</div>
 
 	</body>
-
-	<script>
-		$(function(){
-			var pristine = new Pristine(document.getElementById("registerform"));
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
-				var valid = pristine.validate();
-			});
-		})
-	</script>
 
     <script>
 		$(function(){
@@ -82,9 +73,28 @@
 							form.submit();
 						}
 						else{
-							$("#error").text("one the fields are not correct");
+							$("#error").text("the username already exists");
 						}
 					});
+				}
+				else{
+					var errors="";
+					if(!validator.isAlphanumeric(""+$("#username").val())){
+						errors=errors+"<p>use only alphabets and numbers for username</p>";
+					}
+					if(!validator.isAlphanumeric(""+$("#password").val())){
+						errors=errors+"<p>use only alphabets and numbers for password <br>";
+					}
+					if(!validator.isAlphanumeric(""+$("#password_repeat").val())){
+						errors=errors+"<p>use only alphabets and numbers for password confirmation</p>";
+					}
+					if(!validator.isAlphanumeric(""+$("#dname").val())){
+						errors=errors+"<p>use only alphabets and numbers for display name</p>";
+					}
+					if(!validator.equals(""+$("#password").val(),""+$("#password_repeat").val())){
+						errors=errors+"<p>the password and the confirmation must match</p>";
+					}
+					document.getElementById("error").innerHTML=errors;
 				}
 			})
 		})

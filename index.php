@@ -53,7 +53,7 @@
 					<input type="submit" value="login" id="submit"><br>
 				</form>
 
-				<p id="error"></p>
+				<div id="error"></div>
 
 				<a href="register.php">No account ? register here</a>
 			</div>
@@ -79,9 +79,19 @@
 							form.submit();
 						}
 						else{
-							$("#error").text("username or password is incorrect !");
+							$("#error").text("wrong username or password");
 						}
 					});
+				}
+				else{
+					var errors="";
+					if(!validator.isAlphanumeric($("#username").val()+"")){
+						errors=errors+"<p>use only alphabets and numbers in username !</p>";
+					}
+					if(!validator.isAlphanumeric($("#password").val()+"")){
+						errors=errors+"<p>use only alphabets and numbers in password !</p>";
+					}
+					document.getElementById("error").innerHTML=errors;
 				}
 			})
 		})
