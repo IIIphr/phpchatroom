@@ -29,7 +29,7 @@
 
     <body>
 
-		<div class="mycontainer">
+		<div class="container">
 			<div class="leftcontainer" id="leftpanel">left panel</div>
 
 			<div class="maincontainer" id="mainpanel">
