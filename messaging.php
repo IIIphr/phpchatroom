@@ -29,9 +29,9 @@
 			<div class="leftcontainer" id="leftpanel">left panel</div>
 
 			<div class="maincontainer" id="mainpanel">
-				<p id="messages">messages goes here :<br></p>
+				<div id="messages">messages goes here :<br></div>
 
-				<textarea name="message" id="message" cols="30" rows="10">Type your message here</textarea>
+				<textarea name="message" id="message" cols="100" rows="1">Type your message here</textarea>
 				<br>
 				<p id="status"></p>
 

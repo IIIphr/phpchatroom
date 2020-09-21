@@ -67,3 +67,9 @@ form{
     display: table-cell;
     vertical-align: middle;
 }
+div#messages{
+    scroll-behavior: smooth;
+    overflow-y:auto;
+    width: 100%;
+    height: 600px;
+}
