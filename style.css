@@ -41,3 +41,21 @@ button:active,.button:active,#submit:active{
     box-shadow: -3px 3px rgb(136, 133, 133);
     transform: translate(-1px,1px);
 }
+table{
+    display: inline-table;
+    border: 1px solid black;
+
+}
+td.label{
+    text-align: right;
+    width: 50%;
+}
+td.input{
+    text-align: left;
+    width: 50%;
+}
+form{
+    border: 1px solid black;
+    display: inline-block;
+    width: 45%;
+}

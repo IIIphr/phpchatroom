@@ -49,11 +49,19 @@
 
 				<div class="maincontainer" id="mainpanel">
 					<form method="POST" id="loginform">
-						<label for="username">username : </label>
-						<input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
-						<label for="username">password : </label>
-						<input type="password" name="password" id="password" required><br>
-						<input type="submit" value="login" id="submit"><br>
+						<table>
+							<tbody>
+								<tr>
+									<td class="label"><label for="username">username : </label></td>
+									<td class="input"><input type="text" name="username" id="username" required autofocus autocomplete="on"></td>
+								</tr>
+								<tr>
+									<td class="label"><label for="username">password : </label></td>
+									<td class="input"><input type="password" name="password" id="password" required></td>
+								</tr>
+							</tbody>
+						</table>
+						<br><input type="submit" value="login" id="submit"><br>
 					</form>
 
 					<div id="error"></div>
