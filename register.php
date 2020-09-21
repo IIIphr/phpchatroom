@@ -34,37 +34,39 @@
 			<div class="leftcontainer" id="leftpanel">left panel</div>
 
 			<div class="maincontainer" id="mainpanel">
-				<form id="registerform" method="POST">
-					<table>
-						<tbody>
-							<tr>
-								<td class="label">username : </td>
-								<td class="input"><input type="text" name="username" id="username"
-								required autofocus maxlength="30"></td>
-							</tr>
-							<tr>
-								<td class="label">password : </td>
-								<td class="input"><input type="password" name="password" id="password"
-								minlength="8" required></td>
-							</tr>
-							<tr>
-								<td class="label">confirm password : </td>
-								<td class="input"><input type="password" name="password_repeat"
-								id="password_repeat" minlength="8"></td>
-							</tr>
-							<tr>
-								<td class="label">display name : </td>
-								<td class="input"><input type="text" name="dname" id="dname"required
-								maxlength="30"></td>
-							</tr>
-						</tbody>
-					</table>
-					<br><input type="submit" value="submit" id="submit"><br>
-				</form>
+				<div class="fholder">
+					<form id="registerform" method="POST">
+						<table>
+							<tbody>
+								<tr>
+									<td class="label">username : </td>
+									<td class="input"><input type="text" name="username" id="username"
+									required autofocus maxlength="30"></td>
+								</tr>
+								<tr>
+									<td class="label">password : </td>
+									<td class="input"><input type="password" name="password" id="password"
+									minlength="8" required></td>
+								</tr>
+								<tr>
+									<td class="label">confirm password : </td>
+									<td class="input"><input type="password" name="password_repeat"
+									id="password_repeat" minlength="8"></td>
+								</tr>
+								<tr>
+									<td class="label">display name : </td>
+									<td class="input"><input type="text" name="dname" id="dname"required
+									maxlength="30"></td>
+								</tr>
+							</tbody>
+						</table>
+						<br><input type="submit" value="submit" id="submit"><br>
+					</form>
 
-				<div id="error"></div>
+					<div id="error"></div>
 
-				<a class="button" href="index.php">return to login</a>
+					<a class="button" href="index.php">return to login</a>
+				</div>
 			</div>
 
 			<div class="rightcontainer" id="rightpanel">right panel</div>

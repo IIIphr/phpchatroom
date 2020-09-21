@@ -48,25 +48,28 @@
 				<div class="leftcontainer" id="leftpanel">left panel</div>
 
 				<div class="maincontainer" id="mainpanel">
-					<form method="POST" id="loginform">
-						<table>
-							<tbody>
-								<tr>
-									<td class="label"><label for="username">username : </label></td>
-									<td class="input"><input type="text" name="username" id="username" required autofocus autocomplete="on"></td>
-								</tr>
-								<tr>
-									<td class="label"><label for="username">password : </label></td>
-									<td class="input"><input type="password" name="password" id="password" required></td>
-								</tr>
-							</tbody>
-						</table>
-						<br><input type="submit" value="login" id="submit"><br>
-					</form>
+					<div class="fholder">
+						<form method="POST" id="loginform">
+							<table>
+								<tbody>
+									<tr>
+										<td class="label"><label for="username">username : </label></td>
+										<td class="input"><input type="text" name="username" id="username" required autofocus autocomplete="on"></td>
+									</tr>
+									<tr>
+										<td class="label"><label for="username">password : </label></td>
+										<td class="input"><input type="password" name="password" id="password" required></td>
+									</tr>
+								</tbody>
+							</table>
+							<br><input type="submit" value="login" id="submit"><br>
+						</form>
 
-					<div id="error"></div>
+						<div id="error"></div>
 
-					<a class="button" href="register.php">No account ? register here</a>
+						<a class="button" href="register.php">No account ? register here</a>
+
+					</div>
 				</div>
 
 				<div class="rightcontainer" id="rightpanel">right panel</div>
