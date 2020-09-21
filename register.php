@@ -24,6 +24,7 @@
 			})
 		</script>
 		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
 		<link rel="stylesheet" href="style.css">
     </head>
 
@@ -47,7 +48,7 @@
 
 				<div id="error"></div>
 
-				<a href="index.php">return to login</a>
+				<a class="button" href="index.php">return to login</a>
 			</div>
 
 			<div class="rightcontainer" id="rightpanel">right panel</div>

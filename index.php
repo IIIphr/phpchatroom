@@ -38,6 +38,7 @@
 			})
 		</script>
 		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
 		<link rel="stylesheet" href="style.css">
 	</head>
 
@@ -48,14 +49,16 @@
 
 				<div class="maincontainer" id="mainpanel">
 					<form method="POST" id="loginform">
-						username : <input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
-						password : <input type="password" name="password" id="password" required><br>
+						<label for="username">username : </label>
+						<input type="text" name="username" id="username" required autofocus autocomplete="on"><br>
+						<label for="username">password : </label>
+						<input type="password" name="password" id="password" required><br>
 						<input type="submit" value="login" id="submit"><br>
 					</form>
 
 					<div id="error"></div>
 
-					<a href="register.php">No account ? register here</a>
+					<a class="button" href="register.php">No account ? register here</a>
 				</div>
 
 				<div class="rightcontainer" id="rightpanel">right panel</div>

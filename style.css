@@ -7,4 +7,37 @@
 }
 .maincontainer{
     text-align: center;
+    background-color: white;
+    border-radius: 4px;
+}
+body{
+    background-color: rgb(45, 149, 209);
+    font-family: 'Architects Daughter';
+    font-size: large;
+}
+button,.button,#submit{
+    font-family: 'Architects Daughter';
+    font-size: large;
+    border-radius: 4px;
+    transition: 0.3s;
+    opacity: 0.7;
+    box-shadow: -3px 3px rgb(136, 133, 133);
+    background-color: rgb(45, 149, 209);
+    border: none;
+    color: white;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+}
+button:hover,.button:hover,#submit:hover{
+    opacity: 1
+}
+input,textarea{
+    font-family: 'Architects Daughter';
+    font-size: large;
+}
+button:active,.button:active,#submit:active{
+    background-color: rgb(45, 149, 209);
+    box-shadow: -3px 3px rgb(136, 133, 133);
+    transform: translate(-1px,1px);
 }
