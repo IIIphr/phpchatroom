@@ -60,8 +60,7 @@
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					var res="submitted <br>"+this.responseText;
-					document.getElementById("status").innerHTML = res;
+					document.getElementById("status").innerHTML = "submitted";
 				}
 			};
 			xhttp.open("POST", "store_message.php", true);
