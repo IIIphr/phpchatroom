@@ -73,3 +73,7 @@ div#messages{
     width: 100%;
     height: 600px;
 }
+.msg{
+    max-width: 300px;
+    border: 1px solid black;
+}

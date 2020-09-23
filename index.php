@@ -67,7 +67,9 @@
 
 						<div id="error"></div>
 
-						<a class="button" href="register.php">No account ? register here</a>
+						<form action="register.php">
+							<input type="submit" value="No account ? register here" id="submit">
+						</form>
 
 					</div>
 				</div>

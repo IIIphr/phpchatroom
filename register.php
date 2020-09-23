@@ -60,12 +60,15 @@
 								</tr>
 							</tbody>
 						</table>
-						<br><input type="submit" value="submit" id="submit"><br>
+						<br><input type="submit" value="register" id="submit"><br>
 					</form>
 
 					<div id="error"></div>
 
-					<a class="button" href="index.php">return to login</a>
+					<form action="index.php">
+						<input type="submit" value="return to login" id="submit">
+					</form>
+
 				</div>
 			</div>
 

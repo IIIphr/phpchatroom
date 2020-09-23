@@ -19,8 +19,8 @@
 			}
 		</script>
 		<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
-		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="node_modules/validator/validator.min.js"></script>
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
