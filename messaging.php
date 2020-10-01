@@ -31,7 +31,7 @@
 			<div class="maincontainer" id="mainpanel">
 				<div id="messages">messages goes here :<br></div>
 
-				<textarea name="message" wrap="hard" id="message" cols="85" rows="2">Type your message here</textarea>
+				<textarea name="message" wrap="hard" id="message" cols="100" rows="2">Type your message here</textarea>
 
 				<button onclick="submit()">submit</button>
 				<button onclick="logout()">logout</button>
