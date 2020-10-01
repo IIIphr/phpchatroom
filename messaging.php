@@ -31,12 +31,9 @@
 			<div class="maincontainer" id="mainpanel">
 				<div id="messages">messages goes here :<br></div>
 
-				<textarea name="message" id="message" cols="100" rows="1">Type your message here</textarea>
-				<br>
-				<p id="status"></p>
+				<textarea name="message" wrap="hard" id="message" cols="85" rows="2">Type your message here</textarea>
 
 				<button onclick="submit()">submit</button>
-				<button onclick="refresh()">refresh</button>
 				<button onclick="logout()">logout</button>
 			</div>
 
@@ -59,9 +56,7 @@
 		function submit(){
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("status").innerHTML = "submitted";
-				}
+				document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
 			};
 			xhttp.open("POST", "store_message.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -71,29 +66,15 @@
 	</script>
 
 	<script>
-		function refresh(){
+		setInterval(function temp(){
 			xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					var res="refreshed ! <br>";
-					document.getElementById("status").innerHTML = res;
 					document.getElementById("messages").innerHTML = this.responseText;
-				}
-			};
-			xhttp.open("POST", "get_messages.php", true);
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send();
-		}
-	</script>
-
-	<script>
-		setInterval(function(){
-			xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					var res="refreshed ! <br>";
-					document.getElementById("status").innerHTML = res;
-					document.getElementById("messages").innerHTML = this.responseText;
+					if(typeof temp.counter=='undefined'){
+						document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
+						temp.counter=1;
+					}
 				}
 			};
 			xhttp.open("POST", "get_messages.php", true);

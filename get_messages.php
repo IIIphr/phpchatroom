@@ -5,16 +5,23 @@ $req="SELECT * FROM messages";
 $res=$mysql->query($req);
 if ($res->num_rows > 0) {
   while($row = $res->fetch_assoc()) {
-    $msg="";
+    $div;$sender;$msg;$time;
     if($row['sender']==$_SESSION['sender']){
-      $msg=$msg . "<div class=\"messageself\"><div class=\"msgself";
+      $div="messageself";
+      $sender="senderself";
+      $msg="msgself";
+      $time="timeself";
     }
     else{
-      $msg=$msg . "<div class=\"messageother\"><div class=\"msg";
+      $div="messageother";
+      $sender="sender";
+      $msg="msg";
+      $time="time";
     }
-    $msg=$msg . "\" ><div class=\"sender\" >".$row['sender']."</div><br><div class=\"txt\" >".$row['message']."</div><br><div class=\"time\" >".$row['time']."</div></div></div>";
+    $msg="<div class=\"".$div."\"><div class=\"".$msg."\" ><div class=\"".$sender."\" >".$row['sender']."</div><br><p class=\"txt\" >".$row['message']."</p><br><div class=\"".$time."\" >".$row['time']."</div></div></div>";
     echo $msg;
   }
 }
+echo "<div id=\"endscroll\"></div>";
 $mysql->close();
 ?>

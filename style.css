@@ -68,11 +68,11 @@ form#loginform,form#registerform{
     vertical-align: middle;
 }
 div#messages{
-    scroll-behavior: smooth;
     overflow-y:auto;
     width: 100%;
-    height: 600px;
+    height: 90%;
     background-image: url("back.jpg");
+    border-radius: 4px;
     background-position: center;
 }
 .messageother{
@@ -102,18 +102,31 @@ div#messages{
 }
 .txt{
     font-family: sans-serif;
-    font-size: medium;
+    font-size: large;
     display: inline-block;
+    padding: 2px;
 }
 .sender{
     font-size: smaller;
     display: inline-block;
-    background-color: lightcoral;
+    color: rgb(58, 113, 177);
+}
+.senderself{
+    font-size: smaller;
+    display: inline-block;
+    color: rgb(58, 116, 63);
 }
 .time{
     font-size: smaller;
     display: inline-block;
-    background-color: lightcoral;
+    color: rgb(58, 113, 177);
+
+}
+.timeself{
+    font-size: smaller;
+    display: inline-block;
+    color: rgb(58, 116, 63);
+
 }
 ::-webkit-scrollbar {
     width: 10px;
